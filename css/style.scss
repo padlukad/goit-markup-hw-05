@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@900&display=swap');
+%roboto {
+    font-weight: 900;
+    font-family: "Roboto";
+}
+%sans {
+    font-family: "Open Sans";
+    letter-spacing: 0px;
+} 
+%H {
+    @extend %roboto;
+    font-size: 48px;
+    letter-spacing: -1px;
+    line-height: 32px;
+    color: #515151;
+    text-align: center;
+    margin-bottom: 130px;
+}
+%text {
+    @extend %roboto;
+    font-size: 18px;
+    letter-spacing: 0px;
+    line-height: 32px;
+    color: #ffffff;
+    text-align: center;
+}
+%blog__img {
+    width: 350px;
+    height: 260px;
+    margin-bottom: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+*{
+    margin: 0 auto;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body {
+    max-width: 1650px;
+    min-height: 100vh;
+    padding: 35px 275px 80px 260px;
+}
+main {
+    margin: 0;
+    max-width: 1110px;
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 100px;
+        img {
+            margin: 0;
+        }
+        nav {   
+            margin: 0;        
+            ul {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;               
+                li {
+                    padding-left: 30px;
+                    a {
+                        @extend %sans;
+                        font-size: 14px;
+                        line-height: 11px;
+                        color: #0f0101;
+                        font-weight: 700;  
+                        &:hover, &:active {
+                            color: #1abc9c;
+                            transition: 1s;
+                        }
+                    } 
+                }
+               
+            } 
+        } 
+    }
+    .goods {
+        h1 {
+            @extend %H;
+        }
+        .galery {
+            margin-bottom: 130px;
+            .first__row, .second__row {             
+                display: flex;
+                flex-direction: row; 
+                justify-content: space-between;  
+                align-items: center;
+                margin-bottom: 30px;        
+                .card {
+                    max-width: 255px;
+                    max-height: 320px;
+                    background-color: #e9f0fd;
+                    margin: 0;
+                    .image__container {
+                        height: 280px;
+                        width: 250px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        img {
+                            max-width: 100%;
+                            max-height: 100%;
+                        }
+                    }
+                    footer {
+                        display: flex;
+                        .name {
+                            width:200px;
+                            height:40px;
+                            margin: 0;
+                            background-color: #000000;
+                            p {
+                                @extend %text;
+                                padding-top: 4px;
+                                padding-bottom: 4px;
+                            }
+                        }
+                        .price {
+                            margin: 0;
+                            width: 55px;
+                            height: 40px;
+                            background-color: #323232;
+                            display: flex;
+                            align-items: center;
+                            span{
+                                @extend %text;
+                            }
+                        }
+                    }
+                    &:hover {
+                        p{
+                            background-color: #1abc9c;
+                            transition: 1s;
+                        }
+                        .price {
+                            background-color: #2fdfbb;
+                            transition: 1s;
+                        }
+                    }
+                }
+            }
+        }        
+    }
+    .blog{
+        margin: 0;
+        h1 {
+            @extend %H;
+        }
+        .blog__post {
+            display: flex;
+            justify-content: space-between;
+            .news {
+                margin: 0;
+                max-width: 350px;
+                max-height: 495px;
+                .blog__img-1 {
+                    @extend %blog__img;
+                    background-image: url("https://c.radikal.ru/c19/2010/aa/9a1561022ee5.png"); 
+                }
+                .blog__img-2 {
+                    @extend %blog__img;
+                    background-image: url("https://a.radikal.ru/a16/2010/a8/ddfc00c477d8.png"); 
+                }
+                .blog__img-3 {
+                    @extend %blog__img;
+                    background-image: url("https://d.radikal.ru/d13/2010/a9/790ab41d0177.png"); 
+                }
+                h2 {
+                    @extend %sans;
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: #555252;
+                    font-weight: 600;
+                    height: 54px;
+                    margin-bottom: 45px;
+                }
+                p{
+                    @extend %sans;
+                    font-size: 14px;
+                    color: #555252;
+                    font-weight: 400;
+                    margin-bottom: 5px;
+                    height: 65px;
+                    overflow: hidden;
+                }
+                button {
+                    @extend %sans;
+                    text-align: center;
+                    font-size: 16px;
+                    color: #ffffff;
+                    font-weight: 300;
+                    padding: 16px 45px 16px 43px;
+                    border-radius: 3px;
+                    filter: drop-shadow(1px 1.732px 2.5px rgba(0,0,0,0.39));
+                    background-color: #4ec6ab;
+                    height: 51px;
+                }
+            }
+        }
+    }
+}
